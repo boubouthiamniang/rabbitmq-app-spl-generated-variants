@@ -1,0 +1,4 @@
+## Getting Started
+The rabbitmq-app-spl-generated-variants project contains all generated variants created using the software product line approach. This project includes the first generation of class diagram variants. Methods implementations are missing and must be completed using traits with reusable methods manually.
+
+The manually completed versions can be found in the rabbitmq-app-spl-completed-variants project. Additionally, the rabbitmq-app-reference-variants project contains reference RabbitMQ implementations from tutorial pages and blogs, without applying the software product line approach.
