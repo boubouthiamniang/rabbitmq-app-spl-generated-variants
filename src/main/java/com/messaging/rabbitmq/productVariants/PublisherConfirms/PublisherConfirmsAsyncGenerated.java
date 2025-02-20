@@ -1,27 +1,28 @@
 package com.messaging.rabbitmq.productVariants.PublisherConfirms;
 
 import com.messaging.rabbitmq.traits.ChannelTraits;
-import com.messaging.rabbitmq.traits.ExchangeTraits;
+import com.messaging.rabbitmq.traits.ConnectionTraits;
 import com.messaging.rabbitmq.traits.ProducerConfirmsTraits;
+import com.messaging.rabbitmq.traits.QueueTraits;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
 
 public class PublisherConfirmsAsyncGenerated {
 
     public static void main(String[] args) throws Exception {
 
-        ExchangeTraits exchangeTraits = new ExchangeTraits() {};
-        ChannelTraits channelTraits = new ChannelTraits() {};
+        ConnectionTraits connectionTraits = new ConnectionTraits() {};
+        ChannelTraits channelTraits = new ChannelTraits() {};    
+        QueueTraits queueTraits = new QueueTraits() {};
         ProducerConfirmsTraits producerConfirmsTraits = new ProducerConfirmsTraits() {};
 
-        ConnectionFactory factory = new ConnectionFactory();
-        Connection connection = factory.newConnection();
-        Channel channel = connection.createChannel();
+        Connection connection = null;
+        Channel channel = null;
 
-        exchangeTraits.declareExchange(channel, null, null);
-
+        queueTraits.declareQueue(channel, null, false, false, false, null);
         channelTraits.channelConfirmSelect(channel);
+
+        String message = "";
 
         producerConfirmsTraits.handlePublishConfirmsAsynchronously(channel, null, null, null);
     }

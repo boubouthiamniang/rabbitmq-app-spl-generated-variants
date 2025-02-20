@@ -2,21 +2,20 @@ package com.messaging.rabbitmq.productVariants.directExchange;
 
 
 import com.messaging.rabbitmq.traits.ChannelTraits;
+import com.messaging.rabbitmq.traits.ConnectionTraits;
 import com.messaging.rabbitmq.traits.ConsumerTraits;
 import com.messaging.rabbitmq.traits.ExchangeTraits;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
 
 public class ConsumerDirectGenerated {
 
     public static void main(String[] argv) throws Exception {
 
-        ExchangeTraits exchangeTraits = new ExchangeTraits() {};
-        ChannelTraits channelTraits = new ChannelTraits() {};
+        ConnectionTraits connectionTraits = new ConnectionTraits() {};
+        ChannelTraits channelTraits = new ChannelTraits() {};    
+        ExchangeTraits exchangeTraits = new ExchangeTraits() {}; 
         ConsumerTraits consumerTraits = new ConsumerTraits() {};
-
-        ConnectionFactory factory = null;
 
         Connection connection = null;
         Channel channel = null;
